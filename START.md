@@ -1,24 +1,23 @@
 # Technischer Einstieg — P11
 
+## P11-T01 lokal nachvollziehen
 
-## Einstiegspunkt ausführen
-
-Voraussetzungen: QGIS Desktop.
+Im Projektordner in PowerShell ausführen; benötigt wird nur die vorhandene Python-Laufzeit mit Standardbibliothek:
 
 ~~~powershell
-python src/geojson_pruefen.py
+uv run --offline --python 3.12 python -X utf8 nachweise/p11-t01_pruefen.py
 ~~~
 
-Das Startprogramm meldet den Initialisierungsstand. Fachfunktionen sind bewusst noch nicht implementiert und melden dies bei einem Aufruf. Fehlende Bibliotheken und Frameworks erst im passenden Ticket mit ihrer tatsächlichen Version ergänzen.
+Der Bestandscheck liest `beispieldaten/auftraege.geojson`, verändert die Datei nicht und schreibt `nachweise/p11-t01_ergebnis.json`. Beim erneuten Aufruf wird dieser Bericht mit aktuellem Zeitpunkt ersetzt. Die genaue Python-Version steht im Bericht.
 
-## Nächste Aufgabe
+Erwartet: zwölf Point-Features, vollständige fachliche Felder, eindeutige Kennungen G1 bis G12 und synthetische Herkunft. Elf Koordinatenpaare liegen im Wertebereich; G12 mit `[8.67, 95]` verletzt die Breitengradgrenze. Rückgabecode 0 bedeutet hier, dass der bekannte Fehlerfall wie erwartet erkannt wurde. Abweichungen vom beschriebenen Bestand führen zu einem Fehler und einem Rückgabecode ungleich 0.
 
-Koordinaten, Status und Bezirk festlegen; synthetische Herkunft kennzeichnen.
+Das Datenmodell und alle zwölf Einträge sind in [README.md](README.md) beschrieben. Der Bericht enthält den SHA-256 der Eingabe, die Python-Version, den Prüfzeitpunkt und die Begründung für G12. Dies ist ein kleiner Nachweis für P11-T01, keine allgemeine GeoJSON-Validierung.
 
-## Technische Quellen
+## Vorhandener Einstiegspunkt und spätere Arbeit
 
-- [Python-CSV-Modul](https://docs.python.org/3/library/csv.html)
-- [Offizielle Angular-CLI-Anleitung](https://angular.dev/tools/cli/setup-local)
-- [WPF mit .NET](https://learn.microsoft.com/de-de/dotnet/desktop/wpf/get-started/create-app-visual-studio)
+~~~powershell
+uv run --offline --python 3.12 python -X utf8 src/geojson_pruefen.py
+~~~
 
-Vor dem Einbinden eines Frameworks dessen aktuelle offizielle Anleitung lesen.
+Der vorhandene Einstiegspunkt meldet weiterhin nur den Initialisierungsstand; seine Fachfunktion ist nicht implementiert. Er ist kein Abnahmenachweis. QGIS Desktop wird erst für die nachfolgenden QGIS-Schritte benötigt. In P11-T01 wurden weder QGIS ausgeführt noch eine Karte oder eine Projektdatei erstellt. Die nächste Phase ist P11-T02 und wurde nicht begonnen.
