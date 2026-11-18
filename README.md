@@ -1,6 +1,6 @@
 # Kommunale Wartungskarte
 
-Stand: 1. November 2026 — **P11-T01: Datenmodell beschrieben und lokal geprüft; Fachfunktionen noch umzusetzen**. Geplanter Abschluss der Basis: 2026-11-08, spätestens 8. November 2026. Geschätzter Basisaufwand: 2 Stunden ohne Einrichtung und Erweiterungen.
+Stand: 3. November 2026 — **P11-T01 abgeschlossen; P11-T02 wegen fehlendem QGIS-Zugang blockiert; Fachfunktionen noch umzusetzen**. Geplanter Abschluss der Basis: 2026-11-08, spätestens 8. November 2026. Geschätzter Basisaufwand: 2 Stunden ohne Einrichtung und Erweiterungen.
 
 Eine kleine Gemeinde möchte Wartungsaufträge verorten und offene Aufträge je Bezirk zählen.
 
@@ -51,6 +51,27 @@ Der kleine [Bestandscheck](nachweise/p11-t01_pruefen.py) prüft Struktur, Felder
 
 [Erweiterungen](VARIANTEN.md) haben einen eigenen Umsetzungsstand. [Private Unternehmenszuordnung](UNTERNEHMEN.lokal.md) bleibt außerhalb der Git-Verwaltung.
 
+## P11-T02 — Voraussetzung fehlt
+
+Am 3. November 2026 wurde QGIS im Suchpfad, in den geprüften Standardinstallationsordnern, Windows-Installationsregistrierungen und Startmenüs nicht gefunden; auch kein laufender QGIS-Prozess. Der begrenzte Suchumfang und die tatsächlichen Ergebnisse stehen in [nachweise/p11-t02_voraussetzungen.json](nachweise/p11-t02_voraussetzungen.json). Das ist keine vollständige Laufwerksinventur.
+
+Das Laden der GeoJSON-Datei, die Auswahl von EPSG:4326 und das Finden von G12 in QGIS bleiben ungeprüft. Die zwölf synthetischen Einträge sind unverändert erhalten. P11-T02 bleibt bis zu einem zugänglichen QGIS Desktop blockiert; Lastenheft A1–A4 bleiben offen. Es wurde keine Ersatzsimulation erstellt und keine Folgephase begonnen.
+
 ## Projektsprache
 
 Dokumentation, selbst gewählte Bezeichner, Kommentare, Meldungen und Beispieldaten werden auf Deutsch geschrieben. Festgelegte API-Schlüssel, Sprachsyntax und Produktnamen bleiben unverändert.
+
+## QGIS-Import vom 17. November 2026
+
+P11-T02 jetzt tatsächlich geprüft mit installiertem QGIS LTR 3.44.15. Die frühere Installationsblockade ist behoben. Originaldatei über Datenquellenverwaltung / Vektor in QGIS Desktop geladen. Attributtabelle zeigt zwölf Objekte; Projektbezug EPSG:4326 sichtbar. Ausdruck `y($geometry) > 90` wählt genau ein Objekt. „Auswahl nach oben“ zeigt G12, offen, sued, synthetisch=true. Fenster auf dem zweiten Bildschirm.
+
+Der zusätzliche echte QGIS-OGR-Lauf bestätigt Layer- und Projektbezug EPSG:4326, zwölf Objekte und G12 mit Längengrad 8,67 / Breitengrad 95. Breitengrad 95 ist außerhalb [-90, 90]. Originaldatei unverändert, SHA256 `a7e72120289bf7869c408ab9ccd5f7076b9a44ff4b065e8903fd54467e6de9a5`.
+
+[Desktopbeobachtung](nachweise/P11-T02-desktop-2026-11-17.json), [echte Aufnahme](nachweise/P11-T02-desktop-2026-11-17.png), [QGIS-Providerprüfung](nachweise/P11-T02-qgis-pruefung.json). Für die Wiederholung in PowerShell:
+
+~~~powershell
+$env:QT_QPA_PLATFORM='offscreen'
+& "$env:LOCALAPPDATA/Programs/OSGeo4W/bin/python-qgis-ltr.bat" -X utf8 nachweise/P11-T02-qgis-pruefung.py
+~~~
+
+Der Providerlauf ersetzt die Desktopbedienung nicht; beide getrennten Nachweise liegen vor. Zustandsdarstellung, Ausschluss, Legende und fertiges Projekt folgen in T03/T04. Keine realen Wartungsorte und keine Prüfung gegen Gemeindegrenzen behauptet.

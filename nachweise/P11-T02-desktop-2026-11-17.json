@@ -1,0 +1,16 @@
+{
+  "zeit": "2026-11-17T17:42:23.863Z",
+  "qgis": "3.44.15",
+  "import": "Unveränderte auftraege.geojson über Datenquellenverwaltung / Vektor geladen",
+  "anzahl": 12,
+  "projektKbs": "EPSG:4326",
+  "auswahlAusdruck": "y($geometry) > 90",
+  "auswahlAnzahl": 1,
+  "ausgewaehlteKennung": "G12",
+  "beobachtung": "Auswahl nach oben zeigt G12, offen, sued, synthetisch=true",
+  "bildschirm": {
+    "x": 3211,
+    "y": 321
+  },
+  "grenze": "T02: Import, Bezugssystem und Fehlerpunkt. Darstellung und Ausschluss folgen in T03."
+}

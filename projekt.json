@@ -1,6 +1,6 @@
 {
   "id": "P11",
-  "status": "initialisiert",
+  "status": "P11-T02 lokal geprüft: echte QGIS-Desktopauswahl und Providerlauf; T03/T04 offen",
   "businessImplemented": false,
   "fixture": "beispieldaten/auftraege.geojson",
   "format": "geojson",
