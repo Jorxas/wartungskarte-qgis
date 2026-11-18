@@ -1,0 +1,17 @@
+{
+  "id": "P11",
+  "status": "initialisiert",
+  "businessImplemented": false,
+  "fixture": "beispieldaten/auftraege.geojson",
+  "format": "geojson",
+  "expectedRecords": 12,
+  "starter": "src/geojson_pruefen.py",
+  "command": "python src/geojson_pruefen.py",
+  "implementationTickets": [
+    "P11-T01",
+    "P11-T02",
+    "P11-T03",
+    "P11-T04"
+  ],
+  "language": "de"
+}

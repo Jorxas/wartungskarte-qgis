@@ -1,0 +1,9 @@
+[
+  {
+    "phase": 1,
+    "ticket": "P11-T01",
+    "quellcommit": "36eedb8d3c52f01ab7024b36e058853a65a25ff5",
+    "lokal_committet_am": "2026-11-02T19:21:37+01:00",
+    "snapshot": "42c4ce10af981d460a15d470641fa6eaf061aa33f93498789737f49560629af2"
+  }
+]
