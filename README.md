@@ -4,14 +4,14 @@ Wartungsaufträge einer fiktiven Gemeinde sollen nach Bezirk verortet werden; un
 
 ![Projektaufbau](dokumentation/ueberblick.svg)
 
-**Veröffentlichungsstand: Phase 1/4.** Dieses eigenständige Repository übernimmt zunächst den bereits lokal committeten Stand. Weitere fachliche Phasen werden im Abstand von mindestens vier Stunden veröffentlicht. Die technische Entwicklung und die öffentliche Veröffentlichung haben unterschiedliche echte Zeitpunkte.
+**Veröffentlichungsstand: Phase 2/4.** Dieses eigenständige Repository übernimmt zunächst den bereits lokal committeten Stand. Weitere fachliche Phasen werden im Abstand von mindestens vier Stunden veröffentlicht. Die technische Entwicklung und die öffentliche Veröffentlichung haben unterschiedliche echte Zeitpunkte.
 
 ## Was hier zu sehen ist
 
 | Schritt | Inhalt | Hier veröffentlicht |
 |---|---|---|
 | 1 | GeoJSON und Koordinatenvertrag | Ja |
-| 2 | QGIS-Projekt und gültige Punkte | Folgt |
+| 2 | QGIS-Projekt und gültige Punkte | Ja |
 | 3 | Kartengestaltung und Auswertung | Folgt |
 | 4 | Portables QGZ und Layoutprüfung | Folgt |
 
