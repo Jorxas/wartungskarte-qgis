@@ -75,3 +75,13 @@ $env:QT_QPA_PLATFORM='offscreen'
 ~~~
 
 Der Providerlauf ersetzt die Desktopbedienung nicht; beide getrennten Nachweise liegen vor. Zustandsdarstellung, Ausschluss, Legende und fertiges Projekt folgen in T03/T04. Keine realen Wartungsorte und keine Prüfung gegen Gemeindegrenzen behauptet.
+
+## Darstellung und Auswertung vom 17. November 2026
+
+P11-T03 lokal geprüft. `src/geojson_pruefen.py` erhält alle zwölf Originalpunkte und schreibt getrennt elf gültige Punkte sowie den begründeten Fehler G12. Grenzwerte sind inklusive; boolesche, nicht endliche und außerhalb liegende Koordinaten werden abgewiesen. Synthetische Herkunft, Zustand und eindeutige Kennung werden geprüft. Bezirke sind synthetische Attribute, keine überprüften Verwaltungsgrenzen.
+
+Tatsächliche Ergebnisse: [gültige Punkte](karten/gueltige-auftraege.geojson), [Ablehnungsgrund](karten/abgelehnte.json), [offene Aufträge je Bezirk](karten/offene-je-bezirk.json): nord=4, sued=3. G12 wird nicht mitgezählt. QGIS verwendet blaue Kreise für offene und grüne Quadrate für erledigte Aufträge. Elf Kennungen sichtbar; kein Hintergrundkartendienst und keine realen Wartungsorte.
+
+Ausführen: `uv run --offline --python 3.12 python -X utf8 nachweise/P11-T03-pruefung.py`; danach mit der installierten QGIS-Python-Laufzeit `python-qgis-ltr.bat -X utf8 src/karte_erstellen.py`, bei fensterlosem Lauf `QT_QPA_PLATFORM=offscreen`. Beide Befehle erfolgreich. [Echte QGIS-Vorschau](nachweise/P11-T03-kartenvorschau.png) visuell geprüft. Der erste Offscreen-Lauf zeigte Kästchen statt Schriftzeichen; explizites Laden der vorhandenen Arial-Schrift behebt dies, erneuter Renderlauf geprüft. Für andere Systeme muss eine passende Schrift verfügbar sein.
+
+T04 folgt nach Sicherung: echte Projektdatei, Legende, erneutes Öffnen und Bildschirmnachweis. Noch keine Gesamtabnahme behauptet. Studentische Schätzung 45 Minuten; keine separat gemessene Wiederaufnahmedauer, keine menschliche Eigenleistung. Dokumentationszeit: 2026-11-17T17:46:17.755Z.
