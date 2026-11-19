@@ -1,6 +1,6 @@
 # Kommunale Wartungskarte
 
-Stand: 3. November 2026 — **P11-T01 abgeschlossen; P11-T02 wegen fehlendem QGIS-Zugang blockiert; Fachfunktionen noch umzusetzen**. Geplanter Abschluss der Basis: 2026-11-08, spätestens 8. November 2026. Geschätzter Basisaufwand: 2 Stunden ohne Einrichtung und Erweiterungen.
+Stand: 17. November 2026 — vier Basisphasen und Lastenheft lokal geprüft. Echte QGIS-Projektdatei, Legende, Desktopaufnahme und Portabilitätsprüfung vorhanden. Veröffentlichung ausstehend. Frühere Blockaden unten sind Verlauf.
 
 Eine kleine Gemeinde möchte Wartungsaufträge verorten und offene Aufträge je Bezirk zählen.
 
@@ -85,3 +85,15 @@ Tatsächliche Ergebnisse: [gültige Punkte](karten/gueltige-auftraege.geojson), 
 Ausführen: `uv run --offline --python 3.12 python -X utf8 nachweise/P11-T03-pruefung.py`; danach mit der installierten QGIS-Python-Laufzeit `python-qgis-ltr.bat -X utf8 src/karte_erstellen.py`, bei fensterlosem Lauf `QT_QPA_PLATFORM=offscreen`. Beide Befehle erfolgreich. [Echte QGIS-Vorschau](nachweise/P11-T03-kartenvorschau.png) visuell geprüft. Der erste Offscreen-Lauf zeigte Kästchen statt Schriftzeichen; explizites Laden der vorhandenen Arial-Schrift behebt dies, erneuter Renderlauf geprüft. Für andere Systeme muss eine passende Schrift verfügbar sein.
 
 T04 folgt nach Sicherung: echte Projektdatei, Legende, erneutes Öffnen und Bildschirmnachweis. Noch keine Gesamtabnahme behauptet. Studentische Schätzung 45 Minuten; keine separat gemessene Wiederaufnahmedauer, keine menschliche Eigenleistung. Dokumentationszeit: 2026-11-17T17:46:17.755Z.
+
+## Abgenommenes QGIS-Projekt vom 17. November 2026
+
+Alle vier Basisphasen lokal geprüft. [Portable QGIS-Projektdatei](karten/wartung.qgz) enthält elf gültige Punkte in EPSG:4326 und das Layout „Wartungsübersicht“. Datenquelle relativ gespeichert und an einem anderen Pfad tatsächlich erneut geöffnet: elf Punkte, zwei Zustandskategorien und Layout vorhanden. Die Originaleingabe mit zwölf Punkten bleibt unverändert. G12 wird mit Breitengrad 95 begründet ausgeschlossen; offene Aufträge: nord=4, sued=3.
+
+[Echtes QGIS-Layout mit Legende](nachweise/P11-T04-karte.png) visuell geprüft; anschließend die gespeicherte Projektdatei im echten QGIS Desktop über den Öffnen-Dialog geladen. G1 bis G11, unterschiedliche Symbole, Legende und EPSG:4326 sichtbar. [Unveränderte Desktopaufnahme](nachweise/P11-T04-desktop-2026-11-17.png), [Beobachtungszeit und zweiter Bildschirm](nachweise/P11-T04-desktop-2026-11-17.json), [Portabilitätsprüfung und Prüfsummen](nachweise/P11-T04-projektpruefung.json).
+
+Wiederholung: mit installiertem QGIS-Python `python-qgis-ltr.bat -X utf8 src/projekt_erstellen.py` ausführen; für fensterlosen Lauf `QT_QPA_PLATFORM=offscreen`. Danach `karten/wartung.qgz` im QGIS Desktop öffnen. Layer „Wartungsaufträge“ filtern, um offene Objekte zu zeigen; Layout „Wartungsübersicht“ enthält Zahlen und Ausschlussgrund. Der Generator überschreibt ausschließlich seine genannten abgeleiteten Karten-/Nachweisdateien, niemals die Originaleingabe. Er verlangt die vorhandene QGIS-Laufzeit und unter Windows Arial. Keine Python-Zusatzpakete.
+
+Beobachtete Werkzeugbefunde: veralteten Label-Schriftaufruf durch aktuelles QgsTextFormat ersetzt. Der PNG-Export meldet zusätzlich „The PNG driver does not support update access to existing datasets“, liefert aber Erfolgscode, lesbares Bild und überprüfte Datei. Keine Schreibfähigkeit des PNG-Treibers behauptet. Der erste direkte Desktopstart stellte nicht rechtzeitig ein bedienbares Fenster bereit; ein zweiter Start über den offiziellen Launcher erzeugte eine doppelte leere Instanz. Diese leere Instanz wurde beendet; die Arbeitsinstanz und ihre Daten blieben erhalten. Native Dialoge meldeten teils veralteten Fokus über Accessibility; sichtbarer Eingabecursor und tatsächliche Datei-/Ausdrucksergebnisse wurden geprüft.
+
+Grenzen: synthetische Bezirksattribute, keine echten Gemeindegrenzen oder Wartungsorte, keine Hintergrundkarte, keine Produktivbereitstellung. Unterstützung durch den Assistenten dokumentiert. Studentische Schätzung T04: 15 Minuten; tatsächliche Gesamtdauer nicht separat gemessen. Dokumentationszeit: 2026-11-17T17:50:47.296Z. Projektveröffentlichung und Schlussvalidierung folgen getrennt; kein rückdatierter Commit.

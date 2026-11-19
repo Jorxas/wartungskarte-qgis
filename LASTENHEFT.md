@@ -12,10 +12,10 @@ Lokale Einzelbenutzung, synthetische Daten und ein vorführbarer kleiner Ablauf.
 
 ## Abnahmekriterien
 
-- [ ] A1 — EPSG:4326 verwenden und plausible Breiten- und Längengrade prüfen.
-- [ ] A2 — Offene und erledigte Aufträge unterscheidbar darstellen; verständliche Legende ergänzen.
-- [ ] A3 — Ungültige Koordinate mit Begründung ausschließen.
-- [ ] A4 — Echte QGIS-Projektdatei und Bildschirmnachweis sichern.
+- [x] A1 — EPSG:4326 verwenden und plausible Breiten- und Längengrade prüfen.
+- [x] A2 — Offene und erledigte Aufträge unterscheidbar darstellen; verständliche Legende ergänzen.
+- [x] A3 — Ungültige Koordinate mit Begründung ausschließen.
+- [x] A4 — Echte QGIS-Projektdatei und Bildschirmnachweis sichern.
 
 ## Voraussetzungen
 
@@ -43,3 +43,5 @@ Eine gültige Eingabe, einen Fehlerfall, das Ergebnis und die zuständige Quellc
 QGIS-Übung zur Kartendarstellung und Prüfung synthetischer GeoJSON-Daten.
 
 Derzeit zutreffend: „Eigenes Lernprojekt in Vorbereitung: Kommunale Wartungskarte“. „Umgesetzt“ setzt die tatsächliche Abnahme voraus.
+
+Abnahme am 17. November 2026: A1 durch echten QGIS-OGR-Lauf; A2 durch zwei Symbole und lesbare Layout-/Desktoplegende; A3 durch G12-Ausschluss mit Begründung; A4 durch gespeicherte, erneut geöffnete QGIS-Projektdatei und tatsächliche Desktopaufnahme. Nachweise stehen in README.md.

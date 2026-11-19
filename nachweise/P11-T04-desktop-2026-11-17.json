@@ -1,0 +1,12 @@
+{
+  "zeit": "2026-11-17T17:50:46.772Z",
+  "projekt": "karten/wartung.qgz",
+  "beobachtung": "Projekt über nativen Öffnen-Dialog geladen. G1 bis G11 vollständig lesbar, G12 fehlt. Legende Offen/Erledigt sichtbar, EPSG:4326. Keine defekte Datenquelle angezeigt.",
+  "zweiterBildschirm": {
+    "x": 2560,
+    "y": 0,
+    "breite": 1920,
+    "hoehe": 1032
+  },
+  "grenze": "Desktopaufnahme zusätzlich zum echten QGIS-Layout; nur synthetische Punkte."
+}

@@ -1,7 +1,7 @@
 {
   "id": "P11",
-  "status": "P11-T03 lokal geprüft; Projektdatei und Gesamtbeleg T04 offen",
-  "businessImplemented": false,
+  "status": "Basis und Lastenheft lokal geprüft; Veröffentlichung ausstehend",
+  "businessImplemented": true,
   "fixture": "beispieldaten/auftraege.geojson",
   "format": "geojson",
   "expectedRecords": 12,
@@ -13,5 +13,7 @@
     "P11-T03",
     "P11-T04"
   ],
-  "language": "de"
+  "language": "de",
+  "projektdatei": "karten/wartung.qgz",
+  "abnahme": "nachweise/P11-T04-projektpruefung.json"
 }

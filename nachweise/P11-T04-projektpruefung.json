@@ -1,0 +1,14 @@
+{
+  "zeit": "2026-11-17T17:48:03.946710+00:00",
+  "qgis": "3.44.15-Solothurn",
+  "projekt": "karten/wartung.qgz",
+  "relativeDatenquellen": true,
+  "erneutAnAnderemPfadGeoeffnet": true,
+  "gueltigePunkte": 11,
+  "zustandskategorien": 2,
+  "kbs": "EPSG:4326",
+  "originalSha256": "a7e72120289bf7869c408ab9ccd5f7076b9a44ff4b065e8903fd54467e6de9a5",
+  "projektSha256": "f417235090d4b83fabb886b59db959ffa9f62bd2342f0be578665a1f6ded5b2f",
+  "bildSha256": "5b7f29e6d5f8f955a1b8d9259ec53db6f3005fc8d9c667c370746e93c492185c",
+  "grenze": "QGIS-Layout und Projektprüfung; Desktopaufnahme wird separat tatsächlich erstellt."
+}
