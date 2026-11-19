@@ -12,5 +12,12 @@
     "quellcommit": "e1cb8c1b22fa6bd82884dbcf88414de7de318b48",
     "lokal_committet_am": "2026-11-18T17:25:55+01:00",
     "snapshot": "5e0ac71ef5698c83a4afe68f0c977527631feb77ae3aa6b0846eebaa5bcd36c3"
+  },
+  {
+    "phase": 3,
+    "ticket": "P11-T03",
+    "quellcommit": "28d764474a9a73b3ee78dfaac2b2bfd8456bf98d",
+    "lokal_committet_am": "2026-11-18T21:26:21+01:00",
+    "snapshot": "f7ce25b087690985c0ab0d047ee4131f34a11118c08ec098ead4da662cadf441"
   }
 ]
