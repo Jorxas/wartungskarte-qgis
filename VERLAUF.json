@@ -1,0 +1,30 @@
+[
+  {
+    "phase": 1,
+    "ticket": "P11-T01",
+    "quellcommit": "36eedb8d3c52f01ab7024b36e058853a65a25ff5",
+    "lokal_committet_am": "2026-11-02T19:21:37+01:00",
+    "snapshot": "42c4ce10af981d460a15d470641fa6eaf061aa33f93498789737f49560629af2"
+  },
+  {
+    "phase": 2,
+    "ticket": "P11-T02",
+    "quellcommit": "e1cb8c1b22fa6bd82884dbcf88414de7de318b48",
+    "lokal_committet_am": "2026-11-18T17:25:55+01:00",
+    "snapshot": "5e0ac71ef5698c83a4afe68f0c977527631feb77ae3aa6b0846eebaa5bcd36c3"
+  },
+  {
+    "phase": 3,
+    "ticket": "P11-T03",
+    "quellcommit": "28d764474a9a73b3ee78dfaac2b2bfd8456bf98d",
+    "lokal_committet_am": "2026-11-18T21:26:21+01:00",
+    "snapshot": "f7ce25b087690985c0ab0d047ee4131f34a11118c08ec098ead4da662cadf441"
+  },
+  {
+    "phase": 4,
+    "ticket": "P11-T04",
+    "quellcommit": "7cf0510d6faa7bde01d44c7e6c96c86b1e00e3a0",
+    "lokal_committet_am": "2026-11-19T01:26:23+01:00",
+    "snapshot": "b5f7cc712df9b2deca7224956938d2b86403b375c50816c05eeeaf1095445928"
+  }
+]
