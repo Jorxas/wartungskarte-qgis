@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="de-DE">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; base-uri 'none'; form-action 'none'">
+<title>Wartungskarte QGIS Demo</title>
+<meta name="description" content="Demo des Lernprojekts: Wartungsaufträge in QGIS kartieren, ungültige Koordinaten vor der Karte ausschließen.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%277%27 fill=%27%230b6e4f%27/%3E%3Ccircle cx=%2711%27 cy=%2720%27 r=%274%27 fill=%27%23fff%27/%3E%3Crect x=%2717%27 y=%279%27 width=%278%27 height=%278%27 fill=%27%23fff%27/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#demo" data-i="skip">Zur Demo springen</a>
+<header class="kopf">
+  <div class="breit kopf-innen">
+    <span class="kopf-label" data-i="kopfLabel">Lernprojekt · Demo</span>
+    <div class="sprache" role="group" aria-label="Sprache / Langue" id="sprache">
+      <button type="button" data-lang="de" aria-pressed="true">DE</button>
+      <button type="button" data-lang="fr" aria-pressed="false">FR</button>
+    </div>
+  </div>
+</header>
+
+<main class="breit" id="inhalt">
+  <section class="hero">
+    <h1 data-i="h1">Wartungsaufträge in QGIS kartieren</h1>
+    <p class="lead" data-i="lead"></p>
+    <ul class="badges">
+      <li data-i="badge1"></li><li data-i="badge2"></li><li data-i="badge3"></li>
+    </ul>
+    <p><a class="link" href="https://github.com/Jorxas/wartungskarte-qgis" data-i="repo">Quellcode auf GitHub</a></p>
+  </section>
+
+  <section class="vier" aria-label="Kurzfassung">
+    <article class="karte"><h2 data-i="aufgabeH"></h2><p data-i="aufgabe"></p></article>
+    <article class="karte"><h2 data-i="datenH"></h2><p data-i="daten"></p></article>
+    <article class="karte"><h2 data-i="ergebnisH"></h2><p data-i="ergebnis"></p></article>
+    <article class="karte"><h2 data-i="grenzenH"></h2><p data-i="grenzen"></p></article>
+  </section>
+
+  <section id="demo" class="abschnitt" aria-labelledby="demo-h" tabindex="-1">
+    <h2 id="demo-h" data-i="demoH"></h2>
+    <p data-i="demoLead"></p>
+    <p class="hinweis" id="ehrlich"></p>
+
+    <div class="werkzeuge">
+      <div class="gruppe" role="group" aria-labelledby="filter-l">
+        <span id="filter-l" class="klein" data-i="filter"></span>
+        <div class="segment" id="filter">
+          <button type="button" data-f="alle" aria-pressed="true" data-i="alle"></button>
+          <button type="button" data-f="offen" aria-pressed="false" data-i="offen"></button>
+          <button type="button" data-f="erledigt" aria-pressed="false" data-i="erledigt"></button>
+        </div>
+      </div>
+      <button type="button" class="knopf" id="g12" data-i="g12korrigieren"></button>
+      <button type="button" class="knopf zweit" id="reset" data-i="zuruecksetzen"></button>
+    </div>
+
+    <div class="spalten">
+      <div class="tabellen-spalte">
+        <h3 data-i="tabelleH"></h3>
+        <table class="daten" id="tabelle" data-aria="tabelleBeschr">
+          <thead><tr>
+            <th scope="col" data-i="colKennung"></th><th scope="col" data-i="colZustand"></th><th scope="col" data-i="colBezirk"></th>
+            <th scope="col" data-i="colLon"></th><th scope="col" data-i="colLat"></th><th scope="col" data-i="colPruefung"></th>
+          </tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <div class="ergebnis-spalte">
+        <h3 data-i="ergebnisH2"></h3>
+        <div class="zahlen" id="zahlen" aria-live="polite"></div>
+        <ul class="gruende" id="gruende"></ul>
+        <h3 data-i="vorschauH"></h3>
+        <figure class="vorschau">
+          <svg id="vorschau" viewBox="0 0 600 300" role="img"></svg>
+          <figcaption class="klein" data-i="vorschauHinweis"></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="echt" class="abschnitt" aria-labelledby="echt-h">
+    <h2 id="echt-h" data-i="echtH"></h2>
+    <p id="echt-lead"></p>
+
+    <h3 data-i="bildH"></h3>
+    <figure class="bild">
+      <img src="wartungskarte-layout.png" width="1754" height="1240" alt="" data-alt="bildAlt">
+      <figcaption class="klein" data-i="bildCap"></figcaption>
+    </figure>
+
+    <h3 data-i="befundH"></h3>
+    <dl class="befund" id="befund"></dl>
+
+    <h3 data-i="lauefH"></h3>
+    <div id="schritte"></div>
+
+    <h3 data-i="ausgefuehrtH"></h3>
+    <ul class="liste">
+      <li data-i="ausgefuehrt1"></li><li data-i="ausgefuehrt2"></li><li data-i="ausgefuehrt3"></li>
+    </ul>
+  </section>
+</main>
+
+<footer class="fuss">
+  <div class="breit">
+    <p data-i="fusszeile"></p>
+    <p><a class="link" href="https://jorxas.github.io/Portfolio/" data-i="portfolio"></a> ·
+       <a class="link" href="https://github.com/Jorxas/wartungskarte-qgis">GitHub</a></p>
+  </div>
+</footer>
+
+<script src="i18n.js"></script>
+<script src="lauf-daten.js"></script>
+<script src="pruefung.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
